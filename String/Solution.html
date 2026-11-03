@@ -1,0 +1,678 @@
+<html>
+  <head>
+    <title>Solutions</title>
+    <link rel="stylesheet" href="../Assets/Solution.css">
+  </head>
+  <body>
+    
+    <div id="top">
+      <img src="../Assets/img.png" height="100px">
+      <h2>Problem Solving Through C</h2>
+      <p>BCA 1st Semester Assignment</p>
+    </div>
+    
+    <h1 id="title">Solutions</h1>
+    <div id="topic">
+      <h2>String</h2>
+    </div>
+    
+    
+    <div class="bottom">
+      <h4 id="ans1">Answer 1</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[20];
+    int i;
+    printf("Enter a string: ");
+    gets(str);
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] >= 'a' && str[i] <= 'z')
+        {
+            str[i] = str[i] - 32;
+        }
+    }
+    printf("Uppercase string: %s", str);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: hello world
+
+Uppercase string: HELLO WORLD
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans2">Answer 2</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[100];
+    int i;
+    printf("Enter a string: ");
+    gets(str);
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] = str[i] + 32;
+        }
+    }
+    printf("Lowercase string: %s", str);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: HELLO WORLD
+
+Lowercase string: hello world
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans3">Answer 3</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[100];
+    int i;
+    printf("Enter a string: ");
+    gets(str);
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(i == 0 && str[i] >= 'a' && str[i] <= 'z')
+        {
+            str[i] = str[i] - 32;
+        }
+        else if(i != 0 && str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] = str[i] + 32;
+        }
+    }
+    printf("Sentence case: %s", str);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: hELLO WORLD
+
+Sentence case: Hello world
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans4">Answer 4</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[100];
+    int i;
+    printf("Enter a string: ");
+    gets(str);
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(i == 0 || str[i-1] == ' ')
+        {
+            if(str[i] >= 'a' && str[i] <= 'z')
+            {
+                str[i] = str[i] - 32;
+            }
+        }
+        else
+        {
+            if(str[i] >= 'A' && str[i] <= 'Z')
+            {
+                str[i] = str[i] + 32;
+            }
+        }
+    }
+    printf("Title case: %s", str);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: hello world programming
+
+Title case: Hello World Programming
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans5">Answer 5</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[100];
+    int i;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] >= 'a' && str[i] <= 'z')
+        {
+            str[i] = str[i] - 32;
+        }
+        else if(str[i] >= 'A' && str[i] <= 'Z')
+        {
+            str[i] = str[i] + 32;
+        }
+    }
+
+    printf("Toggle case: %s", str);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello World
+
+Toggle case: hELLO wORLD
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans6">Answer 6</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[100];
+    int i, count = 0;
+    printf("Enter a string: ");
+    gets(str);
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        count++;
+    }
+    printf("Length of string = %d", count);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello World
+
+Length of string = 11
+      </pre>
+    </div>
+    
+    <div class="bottom">
+      <h4 id="ans7">Answer 7</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str1[100], str2[100];
+    int i, flag = 0;
+    printf("Enter first string: ");
+    gets(str1);
+    printf("Enter second string: ");
+    gets(str2);
+    for(i = 0; str1[i] != '\0' || str2[i] != '\0'; i++)
+    {
+        if(str1[i] != str2[i])
+        {
+            flag = 1;
+            break;
+        }
+    }
+    if(flag == 0)
+    {
+        printf("Strings are equal");
+    }
+    else
+    {
+        printf("Strings are not equal");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter first string: Hello
+Enter second string: Hello
+
+Strings are equal
+      </pre>
+    </div>
+    
+    <div class="bottom">
+      <h4 id="ans8">Answer 8</h4>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str1[200], str2[100];
+    int i, j;
+    printf("Enter first string: ");
+    gets(str1);
+    printf("Enter second string: ");
+    gets(str2);
+    for(i = 0; str1[i] != '\0'; i++);
+    for(j = 0; str2[j] != '\0'; j++)
+    {
+        str1[i] = str2[j];
+        i++;
+    }
+    str1[i] = '\0';
+    printf("Concatenated string: %s", str1);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter first string: Hello
+Enter second string: World
+Concatenated string: HelloWorld
+      </pre>
+    </div>
+    
+    <div class="bottom">
+      <h4 id="ans9">Answer 9</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str1[100], str2[100];
+    int i;
+    printf("Enter a string: ");
+    gets(str1);
+    for(i = 0; str1[i] != '\0'; i++)
+    {
+        str2[i] = str1[i];
+    }
+    str2[i] = '\0';
+    printf("Copied string: %s", str2);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello World
+
+Copied string: Hello World
+      </pre>
+    </div>
+    
+    <div class="bottom">
+      <h4 id="ans10">Answer 10</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[100];
+    int num, i, count = 0;
+    printf("Enter a string: ");
+    gets(str)
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        count++;
+    }
+    if(num >= 0 && num < count)
+    {
+        printf("Character = %c", str[num]);
+    }
+    else
+    {
+        printf("Out of bound");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello
+Enter a number: 2
+Character = l
+      </pre>
+    </div>
+    
+    <div class="bottom">
+      <h4 id="ans11">Answer 11</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[100];
+    int i;
+    printf("Enter a string: ");
+    gets(str);
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        printf("%c\n", str[i]);
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello
+
+H
+e
+l
+l
+o
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans12">Answer 12</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str1[100], str2[100];
+    int i, j = 0, count = 0;
+    printf("Enter a string: ");
+    gets(str1);
+    for(i = 0; str1[i] != '\0'; i++)
+    {
+        count++;
+    }
+    for(i = count-1; i >= 0; i--)
+    {
+        str2[j] = str1[i];
+        j++;
+    }
+    str2[j] = '\0';
+    printf("Reverse string: %s", str2);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello World
+
+Reverse string: dlroW olleH
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans13">Answer 13</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str1[100], str2[100];
+    int i;
+
+    printf("Enter first string: ");
+    gets(str1);
+
+    printf("Enter second string: ");
+    gets(str2);
+
+    for(i = 0; str1[i] != '\0' || str2[i] != '\0'; i++)
+    {
+        printf("%d\n", str1[i] - str2[i]);
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter first string: ABC
+Enter second string: ABD
+
+0
+0
+-1
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans14">Answer 14</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+
+void main()
+{
+    char str[100], ch;
+    int i, found = 0;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    printf("Enter a character to search: ");
+    scanf("%c", &ch);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == ch)
+        {
+            found = 1;
+            break;
+        }
+    }
+
+    if(found == 1)
+    {
+        printf("Character exists");
+    }
+    else
+    {
+        printf("Character does not exist");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello World
+Enter a character to search: W
+Character exists
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans15">Answer 15</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char str[20], ch;
+    int i, found = 0;
+
+    printf("Enter a string: ");
+    gets(str);
+
+    printf("Enter a character: ");
+    scanf(" %c", &ch);
+
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == ch)
+        {
+            printf("Character found at index %d", i);
+            found = 1;
+            break;
+        }
+    }
+
+    if(found == 0)
+    {
+        printf("Character does not exist");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello World
+Enter a character: W
+Character found at index 6
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans16">Answer 16</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void countVowels()
+{
+    char str[100];
+    int i, count = 0;
+    printf("Enter a string: ");
+    gets(str);
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == 'a' || str[i] == 'e' ||
+           str[i] == 'i' || str[i] == 'o' ||
+           str[i] == 'u' || str[i] == 'A' ||
+           str[i] == 'E' || str[i] == 'I' ||
+           str[i] == 'O' || str[i] == 'U')
+        {
+            count++;
+        }
+    }
+    printf("Total vowels = %d", count);
+}
+int main()
+{
+    countVowels();
+    return 0;
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello World
+Total vowels = 3
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans17">Answer 17</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void printChar()
+{
+    char str[100];
+    int n;
+    printf("Enter a string: ");
+    gets(str);
+    printf("Enter position: ");
+    scanf("%d", &n);
+    printf("Character at position %d = %c", n, str[n-1]);
+}
+int main()
+{
+    printChar();
+    return 0;
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: Hello
+Enter position: 3
+Character at position 3 = l
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans18">Answer 18</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+void palindrome()
+{
+    char str[100], rev[100];
+    int i, len;
+    printf("Enter a string: ");
+    scanf("%s", str);
+    len = strlen(str);
+    for(i = 0; i < len; i++)
+    {
+        rev[i] = str[len-i-1];
+    }
+    rev[i] = '\0';
+    if(strcmp(str, rev) == 0)
+        printf("String is Palindrome");
+    else
+        printf("String is not Palindrome");
+}
+int main()
+{
+    palindrome();
+    return 0;
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a string: madam
+String is Palindrome
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans19">Answer 19</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+
+void input()
+{
+    int roll, marks[5], i;
+    char name[50], class[20];
+
+    printf("Enter roll no: ");
+    scanf("%d", &roll);
+
+    getchar();
+
+    printf("Enter name: ");
+    gets(name);
+
+    printf("Enter class: ");
+    gets(class);
+
+    printf("Enter marks of 5 subjects:\n");
+
+    for(i=0; i&lt;5; i++)
+    {
+        scanf("%d", &marks[i]);
+    }
+
+    printf("\nRoll no: %d", roll);
+    printf("\nName: %s", name);
+    printf("\nClass: %s", class);
+
+    printf("\nMarks:\n");
+
+    for(i=0; i&lt;5; i++)
+    {
+        printf("%d\n", marks[i]);
+    }
+}
+
+void main()
+{
+    input();
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter roll no: 101
+Enter name: Aaryan Singh
+Enter class: BCA 1st Year
+Enter marks of 5 subjects:
+85
+78
+90
+88
+82
+
+Roll no: 101
+Name: Aaryan Singh
+Class: BCA 1st Year
+Marks:
+85
+78
+90
+88
+82
+      </pre>
+    </div>
+
+    
+  </body>
+</html>

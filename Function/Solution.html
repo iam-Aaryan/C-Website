@@ -1,0 +1,487 @@
+<html>
+  <head>
+    <title>Solutions</title>
+    <link rel="stylesheet" href="../Assets/Solution.css" />
+  </head>
+  <body>
+    <div id="top">
+      <img src="../Assets/img.png" height="100px" />
+      <h2>Problem Solving Through C</h2>
+      <p>BCA 1st Semester Assignment</p>
+    </div>
+
+    <h1 id="title">Solutions</h1>
+
+    <div id="topic">
+      <h2>Function</h2>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans1">Answer 1</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+void input(int *a, int *b)
+{
+    printf("\nEnter 1st number : ");
+    scanf("%d", a);
+    printf("Enter 2nd number : ");
+    scanf("%d", b);
+}
+void add(int a, int b)
+{
+    printf("Addition = %d\n", a + b);
+}
+void sub(int a, int b)
+{
+    printf("Subtraction = %d\n", a - b);
+}
+void mul(int a, int b)
+{
+    printf("Multiplication = %d\n", a * b);
+}
+void div(int a, int b)
+{
+    printf("Division = %d\n", a / b);
+}
+void main()
+{
+    int a, b;
+
+    input(&a, &b);
+    add(a, b);
+
+    input(&a, &b);
+    sub(a, b);
+
+    input(&a, &b);
+    add(a, b);
+
+    input(&a, &b);
+    mul(a, b);
+
+    input(&a, &b);
+    sub(a, b);
+
+    input(&a, &b);
+    mul(a, b);
+
+    input(&a, &b);
+    div(a, b);
+
+    input(&a, &b);
+    div(a, b);
+
+    input(&a, &b);
+    add(a, b);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter 1st number : 2
+Enter 2nd number : 2
+Addition = 4
+
+Enter 1st number : 5
+Enter 2nd number : 3
+Subtraction = 2
+
+Enter 1st number : 4
+Enter 2nd number : 2
+Addition = 6
+
+Enter 1st number : 6
+Enter 2nd number : 2
+Multiplication = 12
+
+Enter 1st number : 2
+Enter 2nd number : 3
+Subtraction = -1
+
+Enter 1st number : 5
+Enter 2nd number : 4
+Multiplication = 20
+
+Enter 1st number : 6
+Enter 2nd number : 2
+Division = 3
+
+Enter 1st number : 8
+Enter 2nd number : 4
+Division = 2
+
+Enter 1st number : 24
+Enter 2nd number : 12
+Addition = 36
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans2">Answer 2</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+void input(int *n)
+{
+    printf("Enter a number: ");
+    scanf("%d", n);
+}
+void add(int n)
+{
+    static int sum = 0;
+    sum = sum + n;
+}
+void main()
+{
+    int n, i;
+    for (i = 1; i <= 10; i++)
+    {
+        input(&n);
+        add(n);
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a number: 1
+Enter a number: 2
+Enter a number: 3
+Enter a number: 4
+Enter a number: 5
+Enter a number: 6
+Enter a number: 7
+Enter a number: 8
+Enter a number: 9
+Enter a number: 10
+
+Total = 55
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans3">Answer 3</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+void arr_re(int *p)
+{
+    int i;
+    for (i = 0; i < 5; i++)
+    {
+        printf("enter value :");
+        scanf("%d",&p[i]);
+    }
+}
+void main()
+{
+    int arr[5],i;
+    arr_re(arr);
+    for (i = 0; i < 5; i++)
+    {
+        printf("%d\n", arr[i]);
+    }      
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+enter value :5
+enter value :4
+enter value :3
+enter value :2
+enter value :1
+5
+4
+3
+2
+1
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans4">Answer 4</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+int fact, rev, count, sum;
+void factorial()
+{
+    int n, i;
+    fact = 1;
+    printf("\nEnter a number: ");
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++)
+        fact = fact * i;
+    printf("Factorial = %d", fact);
+}
+void reverse()
+{
+    int n, rem;
+    rev = 0;
+    printf("\nEnter a number: ");
+    scanf("%d", &n);
+    while (n > 0)
+    {
+        rem = n % 10;
+        rev = rev * 10 + rem;
+        n = n / 10;
+    }
+    printf("Reverse = %d", rev);
+}
+void palindrome()
+{
+    int n, temp, rem;
+    rev = 0;
+    printf("\nEnter a number: ");
+    scanf("%d", &n);
+    temp = n;
+    while (n > 0)
+    {
+        rem = n % 10;
+        rev = rev * 10 + rem;
+        n = n / 10;
+    }
+    if (temp == rev)
+        printf("Palindrome");
+    else
+        printf("Not Palindrome");
+}
+void prime()
+{
+    int n, i;
+    count = 0;
+    printf("\nEnter a number: ");
+    scanf("%d", &n);
+    for (i = 2; i <= n / 2; i++)
+    {
+        if (n % i == 0)
+        {
+            count = 1;
+            break;
+        }
+    }
+    if (n > 1 && count == 0)
+        printf("Prime Number");
+    else
+        printf("Not Prime Number");
+}
+void armstrong()
+{
+    int n, rem, temp;
+    sum = 0;
+    printf("\nEnter a number: ");
+    scanf("%d", &n);
+    temp = n;
+    while (n > 0)
+    {
+        rem = n % 10;
+        sum = sum + rem * rem * rem;
+        n = n / 10;
+    }
+    if (temp == sum)
+        printf("Armstrong Number");
+    else
+        printf("Not Armstrong Number");
+}
+void fibonacci()
+{
+    int a = 0, b = 1, c;
+    printf("\nFibonacci Series:\n");
+    while (a <= 100)
+    {
+        printf("%d ", a);
+        c = a + b;
+        a = b;
+        b = c;
+    }
+}
+void main()
+{
+    int ch;
+    while (1)
+    {
+        printf("\n\n1. Factorial");
+        printf("\n2. Reverse");
+        printf("\n3. Palindrome");
+        printf("\n4. Prime Number");
+        printf("\n5. Armstrong");
+        printf("\n6. Fibonacci");
+        printf("\n7. Exit");
+
+        printf("\nEnter your choice: ");
+        scanf("%d", &ch);
+
+        if (ch == 1)
+            factorial();
+
+        else if (ch == 2)
+            reverse();
+
+        else if (ch == 3)
+            palindrome();
+
+        else if (ch == 4)
+            prime();
+
+        else if (ch == 5)
+            armstrong();
+
+        else if (ch == 6)
+            fibonacci();
+
+        else if (ch == 7)
+            break;
+
+        else
+            printf("Invalid Choice");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+1. Factorial
+2. Reverse
+3. Palindrome
+4. Prime Number
+5. Armstrong
+6. Fibonacci
+7. Exit
+Enter your choice: 1
+
+Enter a number: 5
+Factorial = 120
+
+1. Factorial
+2. Reverse
+3. Palindrome
+4. Prime Number
+5. Armstrong
+6. Fibonacci
+7. Exit
+Enter your choice: 7
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans5">Answer 5</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+void swap(int *a, int *b)
+{
+    int temp;
+
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+void main()
+{
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+    swap(&a, &b);
+    printf("After swapping:\n");
+    printf("a = %d\n", a);
+    printf("b = %d", b);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter two numbers: 10 20
+
+After swapping:
+a = 20
+b = 10
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans6">Answer 6</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+void swap(int a, int b)
+{
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swapping:\n");
+    printf("a = %d\nb = %d", a, b);
+}
+void main()
+{
+    int a, b;
+    printf("Enter two numbers: ");
+    scanf("%d%d", &a, &b);
+    swap(a, b);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter two numbers: 10 20
+After swapping:
+a = 20
+b = 10
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans7">Answer 7</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void power(int num, int p)
+{
+    int result = 1;
+    for(int i = 1; i <= p; i++)
+    {
+        result = result * num;
+    }
+    printf("Result = %d", result);
+}
+void main()
+{
+    int num, p;
+    printf("Enter the number: ");
+    scanf("%d", &num);
+    printf("Enter the power: ");
+    scanf("%d", &p);
+    power(num, p);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter the number: 2
+Enter the power: 3
+Result = 8
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans8">Answer 8</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void cube(int num)
+{
+    int result;
+    result = num * num * num;
+    printf("Cube = %d", result);
+}
+void main()
+{
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    cube(num);
+}
+</pre
+      >
+      <b>Output :</b><br><br>
+      <pre>
+Enter a number: 5
+Cube = 125
+      </pre>
+    </div>
+  </body>
+</html>

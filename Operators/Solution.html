@@ -1,0 +1,349 @@
+<html>
+  <head>
+    <title>Solutions</title>
+    <link rel="stylesheet" href="../Assets/Solution.css" />
+  </head>
+  <body>
+    <div id="top">
+      <img src="../Assets/img.png" height="100px" />
+      <h2>Problem Solving Through C</h2>
+      <p>BCA 1st Semester Assignment</p>
+    </div>
+
+    <h1 id="title">Solutions</h1>
+    <div id="topic">
+      <h2>Operators</h2>
+    </div>
+
+    <!--QUESTION 1-->
+
+    <div class="bottom">
+      <h4 id="ans1">Answer 1</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+  int x=10,y ;
+  y = ++x ;
+  printf("%d",y);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>11</pre><br>
+      <p><b>Explanation : </b>In pre - increment the value is increased by 1 before it is used in an expression</p>
+    </div>
+
+    <!--QUESTION 2-->
+
+    <div class="bottom">
+      <h4 id="ans2">Answer 2</h4>
+      <br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+  int x=10,y ;
+  y = x++ ;
+  printf("%d",y);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>10</pre><br>
+      <p><b>Explanation : </b>In post - increment the value is used first and then increased by 1 later.</p>
+    </div>
+
+    <!--QUESTION 3-->
+
+    <div class="bottom">
+      <h4 id="ans3">Answer 3</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+  int x=10,y ;
+  y = --x ;
+  printf("%d",y);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>9</pre><br>
+      <p><b>Explanation : </b>In pre - decrement the value is decreased by 1 before it is used in an expression</p>
+    </div>
+
+    <!--QUESTION 4-->
+
+    <div class="bottom">
+      <h4 id="ans4">Answer 4</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+  int x=10,y ;
+  y = x-- ;
+  printf("%d",y);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>10</pre><br>
+      <p><b>Explanation : </b>In post - decrement the value is used first and then decreased by 1 later.</p>
+    </div>
+
+    <!--QUESTION 5-->
+    <div class="bottom">
+      <h4 id="ans5">Answer 5</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    float num1,num2;
+    int num3,num4;
+    printf("Addition\n");
+    printf("Enter your 1st num :");
+    scanf("%f",&num1);
+    printf("Enter your 2nd num :");
+    scanf("%f",&num2);
+    printf("The addition of both num result : %f",num1+num2);
+
+    printf("\n\nSubtraction\n");
+    printf("Enter your 1st num :");
+    scanf("%f",&num1);
+    printf("Enter your 2nd num :");
+    scanf("%f",&num2);
+    printf("The subtraction between num1 and num2  result : %f",num1-num2);
+
+    printf("\n\nMultiplication\n");
+    printf("Enter your 1st num :");
+    scanf("%f",&num1);
+    printf("Enter your 2nd num :");
+    scanf("%f",&num2);
+    printf("The Multiplication between both number result : %f",num1*num2);
+
+    printf("\n\ndivision\n");
+    printf("Enter your 1st num :");
+    scanf("%f",&num1);
+    printf("Enter your 2nd num :");
+    scanf("%f",&num2);
+    printf("The division between num1 and num2 result : %f",num1/num2);
+
+    printf("\n\nRemainder\n");
+    printf("Enter your 1st num :");
+    scanf("%d",&num3);
+    printf("Enter your 2nd num :");
+    scanf("%d",&num4);
+    printf("The Remainder after division of num1 by num2 result : %d",num3 % num4);
+}    
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Addition
+Enter your 1st num :2
+Enter your 2nd num :3
+The addition of both num result : 5.000000
+
+Subtraction
+Enter your 1st num :16
+Enter your 2nd num :5
+The subtraction between num1 and num2  result : 11.000000
+
+Multiplication
+Enter your 1st num :4
+Enter your 2nd num :5
+The Multiplication between both number result : 20.000000
+
+division
+Enter your 1st num :24
+Enter your 2nd num :6
+The division between num1 and num2 result : 4.000000
+
+Remainder
+Enter your 1st num :23
+Enter your 2nd num :7
+The Remainder after division of num1 by num2 result : 2
+      </pre>
+    </div>
+
+    <!--QUESTION 6-->
+
+    <div class="bottom">
+      <h4 id="ans6">Answer 6</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+  int num;
+  printf("Enter a number: ");
+  scanf("%d", &num);
+  
+  printf("Last digit = %d", num % 10);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a number: 4568
+Last digit = 8
+      </pre>
+    </div>
+
+    <!--QUESTION 7-->
+
+    <div class="bottom">
+      <h4 id="ans7">Answer 7</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    float numf1,numf2;
+    int num3;
+    printf("Enter your number : ");
+    scanf("%f",&numf1);
+
+    num3=numf1;
+    numf2=numf1-num3;
+    printf("RHS value of decimal num : %f",numf2);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter your number : 45.625
+RHS value of decimal num : 0.625000
+      </pre>
+    </div>
+
+    <!--QUESTION 8-->
+
+    <div class="bottom">
+      <h4 id="ans8">Answer 8</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    int num, cube;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    cube = num * num * num;
+    printf("Cube = %d", cube);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a number: 2
+Cube = 8
+      </pre>
+    </div>
+
+    <!--QUESTION 9-->
+
+    <div class="bottom">
+      <h4 id="ans9">Answer 9</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    float num;
+    int result;
+    printf("Enter a float number: ");
+    scanf("%f", &num);
+    result = num;
+    printf("Rounded number = %d", result);
+
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a float number: 85.2  
+Rounded number = 85
+      </pre>
+    </div>
+
+    <!--QUESTION 10-->
+
+    <div class="bottom">
+      <h4 id="ans10">Answer 10</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h>&gt;
+void main()
+{
+    char ch, upper;
+    printf("Enter a lowercase character: ");
+    ch=getche();
+    upper = ch - 32;
+
+    printf("\nUppercase character = %c", upper);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter a lowercase character: f
+Uppercase character = F
+      </pre>
+    </div>
+
+    <!--QUESTION 11-->
+
+    <div class="bottom">
+      <h4 id="ans11">Answer 11</h4><br>
+      <pre>
+void main()
+{
+    int m1, m2, m3,total;
+    float avg;
+ 
+    printf("Enter marks of 1st subject: ");
+    scanf("%d", &m1);
+
+    printf("Enter marks of 2nd subject: ");
+    scanf("%d", &m2);
+
+    printf("Enter marks of 3rd subject: ");
+    scanf("%d", &m3);
+
+    total = m1 + m2 + m3 ;
+    avg = total/3.0;
+    printf("Average marks = %.2f",avg);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter marks of 1st subject: 80
+Enter marks of 2nd subject: 80
+Enter marks of 3rd subject: 82
+Average marks = 80.67
+      </pre>
+    </div>
+
+    <!--QUESTION 12-->
+
+    <div class="bottom">
+      <h4 id="ans12">Answer 12</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    int p, r, t,s;
+
+    printf("Enter P: ");
+    scanf("%d", &p);
+
+    printf("Enter R: ");
+    scanf("%d", &r);
+
+    printf("Enter T: ");
+    scanf("%d", &t);
+
+    s = (p * r * t) / 100;
+
+    printf("Result : = %d", s);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter P: 100
+Enter R: 5
+Enter T: 2
+Result : = 10
+      </pre>
+    </div>
+  </body>
+</html>

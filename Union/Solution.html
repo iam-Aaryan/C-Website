@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>Solutions</title>
+    <link rel="stylesheet" href="../Assets/Solution.css">
+  </head>
+  <body>
+    
+    <div id="top">
+      <img src="../Assets/img.png" height="100px">
+      <h2>Problem Solving Through C</h2>
+      <p>BCA 1st Semester Assignment</p>
+    </div>
+    
+    <h1 id="title">Solutions</h1>
+    <div id="topic">
+      <h2>Union</h2>
+    </div>
+    
+    
+    <div class="bottom">
+      <h4 id="ans1">Answer 1</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+union Student
+{
+    int roll_no;
+    char name[20];
+    int age;
+    char class_name[10];
+};
+
+void main()
+{
+    union Student s;
+
+    printf("Enter Roll Number: ");
+    scanf("%d", &s.roll_no);
+    printf("Roll Number: %d\n", s.roll_no);
+
+    printf("Enter Name: ");
+    scanf("%s", s.name);
+    printf("Name: %s\n", s.name);
+
+    printf("Enter Age: ");
+    scanf("%d", &s.age);
+    printf("Age: %d\n", s.age);
+
+    printf("Enter Class: ");
+    scanf("%s", s.class_name);
+    printf("Class: %s\n", s.class_name);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter Roll Number: 101
+Roll Number: 101
+Enter Name: Aaryan
+Name: Aaryan
+Enter Age: 18
+Age: 18
+Enter Class: Bca - 1
+Class: Bca
+      </pre>
+    </div>
+
+    
+    
+  </body>
+</html>

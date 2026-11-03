@@ -1,0 +1,528 @@
+<html>
+  <head>
+    <title>Solutions</title>
+    <link rel="stylesheet" href="../Assets/Solution.css" />
+  </head>
+  <body>
+    <div id="top">
+      <img src="../Assets/img.png" height="100px" />
+      <h2>Problem Solving Through C</h2>
+      <p>BCA 1st Semester Assignment</p>
+    </div>
+
+    <h1 id="title">Solutions</h1>
+
+    <div id="topic">
+      <h2>File handling</h2>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans1">Answer 1</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char n[20],d[30];
+    FILE *fp;
+    printf("Enter file name : ");
+    gets(n);
+    printf("Enter the data : ");
+    gets(d);
+    fp=fopen(n,"w");
+    fputs(d,fp);
+    fclose(fp);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter file name : car
+Enter the data : rolls roys is a premium car.
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans2">Answer 2</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    char n[20],d[30];
+    FILE *fp;
+    int i,ans;
+    printf("Enter file name : ");
+    gets(n);
+    printf("Enter the data : ");
+    gets(d);
+
+
+    for(i=0;d[i]!='\0';i++)
+    {
+        ans=d[i];
+        if(ans>=97 && ans<=122)
+        {
+            d[i]=ans-32;
+        }
+    }
+    fp=fopen(n,"w");
+    fputs(d,fp);
+    printf("\n Data stored in the file : \n%s",d);
+    fclose(fp);
+}
+</pre
+      >
+      <b>Output :</b><br><br>
+      <pre>
+Enter file name : folder
+Enter the data : hello-c-learners-of-year-2026
+
+ Data stored in the file : 
+HELLO-C-LEARNERS-OF-YEAR-2026
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans3">Answer 3</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main()
+{
+    char n[20], d[30];
+    char res;
+    FILE *fp;
+    printf("Enter file name : ");
+    gets(n);
+    fp = fopen(n, "w");
+
+    while (1)
+    {
+        printf("\nEnter the data : ");
+        gets(d);
+        fputs(d, fp);
+
+        printf("Do you want to add more : ");
+        res = getche();
+        if (res == 'y' || res == 'Y')
+        {
+            fputs("\n", fp);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fp);
+}
+</pre
+      >
+      <b>Output :</b><br><br>
+      <pre>
+Enter file name : folder
+
+Enter the data : hello programmers
+Do you want to add more : y
+Enter the data : c language
+Do you want to add more : y
+Enter the data : byeee world
+Do you want to add more : n
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans4">Answer 4</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main()
+{
+    char n[20], d[50];
+    char res;
+    FILE *fp;
+    printf("Enter file name : ");
+    gets(n);
+    fp = fopen(n, "w");
+    while (1)
+    {
+        printf("\nEnter the data : ");
+        gets(d);
+        fputs(d, fp);
+
+        printf("Do you want to add more : ");
+        res = getche();
+        if (res == 'y' || res == 'Y')
+        {
+            fputs("\n", fp);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fp);
+    FILE *fpr;
+    FILE *fpw;
+    char str[50],*c;
+    fpr=fopen(n,"r");
+    fpw=fopen("copy","w");
+    while(1)
+    {
+        c=fgets(str,50,fpr);
+        if(c!=0)
+        {
+            fputs(str,fpw);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fpr);
+    fclose(fpw);
+}
+ </pre
+      >
+      <b>Output :</b><br><br>
+      <pre>
+Enter file name : folder
+
+Enter the data : hello program
+Do you want to add more : y
+Enter the data : c language
+Do you want to add more : n
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans5">Answer 5</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main()
+{
+    char n[20], d[50];
+    char res;
+    FILE *fp;
+    int i, ans;
+    printf("Enter file name : ");
+    gets(n);
+    fp = fopen(n, "w");
+    while (1)
+    {
+        printf("\nEnter the data : ");
+        gets(d);
+        fputs(d, fp);
+        printf("Do you want to add more : ");
+        res = getche();
+        if (res == 'y' || res == 'Y')
+        {
+            fputs("\n", fp);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fp);
+    FILE *fpr;
+    FILE *fpw;
+    char str[50],*c;
+    char x[20];
+    printf("\nRename file : ");
+    gets(x);
+    fpr=fopen(n,"r");
+    fpw=fopen(x,"w");
+    while(1)
+    {
+        c=fgets(str,50,fpr);
+        if(c!=0)
+        {
+            fputs(str,fpw);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fpr);
+    fclose(fpw);
+    fp = fopen(n, "w");
+    fclose(fp);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter file name : folder
+
+Enter the data : hello world
+Do you want to add more : y
+Enter the data : byee
+Do you want to add more : n
+Rename file : new folder
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans6">Answer 6</h4>
+      <br />
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main()
+{
+    char n1[20], d1[30];
+    char res1;
+    FILE *fp1;
+    printf("Enter first file name : ");
+    gets(n1);
+    fp1 = fopen(n1, "w");
+    while (1)
+    {
+        printf("\nEnter the data : ");
+        gets(d1);
+        fputs(d1, fp1);
+        printf("Do you want to add more : ");
+        res1 = getche();
+        if (res1 == 'y' || res1 == 'Y')
+        {
+            fputs("\n", fp1);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fp1);
+    char n2[20], d2[30];
+    char res2;
+    FILE *fp2;
+    printf("\nEnter second file name : ");
+    gets(n2);
+    fp2 = fopen(n2, "w");
+    while (1)
+    {
+        printf("\nEnter the data : ");
+        gets(d2);
+        fputs(d2, fp2);
+        printf("Do you want to add more : ");
+        res2 = getche();
+        if (res2 == 'y' || res2 == 'Y')
+        {
+            fputs("\n", fp2);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fp2);
+    FILE *fpr1, *fpr2, *fp3;
+    char str[50], str2[50], *c, *c2;
+    fpr1 = fopen(n1, "r");
+    fpr2 = fopen(n2, "r");
+    fp3 = fopen("main file", "w");
+    while (1)
+    {
+        c = fgets(str, 50, fpr1);
+        if (c != NULL)
+        {
+            fputs(str, fp3);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fputs("\n", fp3);
+    while (1)
+    {
+        c2 = fgets(str2, 50, fpr2);
+        if (c2 != NULL)
+        {
+            fputs(str2, fp3);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fpr1);
+    fclose(fpr2);
+    fclose(fp3);
+}
+</pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter first file name : folder 1
+
+Enter the data : hello 
+Do you want to add more : y
+Enter the data : world
+Do you want to add more : n
+Enter second file name : folder 2
+
+Enter the data : byee 
+Do you want to add more : y
+Enter the data : world
+Do you want to add more : n
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans7">Answer 7</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main()
+{
+    char n[20], d[50];
+    char res;
+    FILE *fp;
+    printf("Enter file name : ");
+    gets(n);
+    fp = fopen(n, "w");
+
+    while (1)
+    {
+        printf("\nEnter the data : ");
+        gets(d);
+        fputs(d, fp);
+
+        printf("Do you want to add more : ");
+        res = getche();
+        if (res == 'y' || res == 'Y')
+        {
+            fputs("\n", fp);
+        }
+        else
+        {
+            break;
+        }
+    }
+    fclose(fp);
+
+    int c, x = 0;
+    FILE *fpr;
+
+    fpr = fopen(n, "r");
+    while (1)
+    {
+        c = fgetc(fpr);
+        if (c != -1)
+        {
+            x++;
+        }
+        else
+        {
+            break;
+        }
+    }
+    printf("\nTotal char : %d", x);
+    fclose(fpr);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter file name : folder
+
+Enter the data : hello c laeraners
+Do you want to add more : y
+Enter the data : byee
+Do you want to add more : n
+Total char : 22
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans8">Answer 8</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+
+void main()
+{
+    char n[20], d[100], res;
+    char str[100], *c;
+    int count = 0, i;
+    FILE *fp;
+
+    printf("Enter file name : ");
+    gets(n);
+
+    fp = fopen(n, "w");
+
+    while (1)
+    {
+        printf("\nEnter the data : ");
+        gets(d);
+        fputs(d, fp);
+
+        printf("Do you want to add more : ");
+        res = getche();
+
+        if (res == 'y' || res == 'Y')
+        {
+            fputs("\n", fp);
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    fclose(fp);
+
+    fp = fopen(n, "r");
+
+    while (1)
+    {
+        c = fgets(str, 100, fp);
+        if (c != NULL)
+        {
+            for (i = 0; str[i] != '\0'; i++)
+            {
+                if (str[i] == ' ' || str[i] == '\n')
+                {
+                    count++;
+                }
+            }
+            if (i > 0 && str[i - 1] != ' ' && str[i - 1] != '\n')
+            {
+                count++;
+            }
+        }
+        else
+        {
+            break;
+        }
+    }
+    printf("\n\nTotal number of words = %d", count);
+    fclose(fp);
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter file name : folder
+
+Enter the data : Hello everyone
+Do you want to add more : y
+
+Enter the data : Welcome to C programming
+Do you want to add more : y
+
+Enter the data : File handling is interesting
+Do you want to add more : n
+
+Total number of words = 10
+      </pre>
+    </div>
+
+
+
+    
+  </body>
+</html>

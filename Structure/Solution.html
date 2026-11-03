@@ -1,0 +1,314 @@
+<html>
+  <head>
+    <title>Solutions</title>
+    <link rel="stylesheet" href="../Assets/Solution.css">
+  </head>
+  <body>
+    
+    <div id="top">
+      <img src="../Assets/img.png" height="100px">
+      <h2>Problem Solving Through C</h2>
+      <p>BCA 1st Semester Assignment</p>
+    </div>
+    
+    <h1 id="title">Solutions</h1>
+    <div id="topic">
+      <h2>Structure</h2>
+    </div>
+    
+    <div class="bottom">
+      <h4 id="ans1">Answer 1</h4><br>
+      <pre>
+#include&lt;stdio.h&gt;
+
+struct employee
+{
+    int id;
+    char name[50];
+    char designation[50];
+};
+
+void main()
+{
+    struct employee e[50];
+    int i;
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("\nEnter details of employee %d\n", i+1);
+
+        printf("Enter ID: ");
+        scanf("%d", &e[i].id);
+
+        getchar();
+
+        printf("Enter Name: ");
+        gets(e[i].name);
+
+        printf("Enter Designation: ");
+        gets(e[i].designation);
+    }
+
+    printf("\nID\tName\t\tDesignation\n");
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("%d\t%s\t\t%s\n", e[i].id, e[i].name, e[i].designation);
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter details of employee 1
+Enter ID: 101
+Enter Name: Rahul
+Enter Designation: Manager
+
+Enter details of employee 2
+Enter ID: 102
+Enter Name: Aman
+Enter Designation: Developer
+
+Enter details of employee 3
+Enter ID: 103
+Enter Name: Karan
+Enter Designation: Accountant
+
+...
+
+ID      Name            Designation
+101     Rahul           Manager
+102     Aman            Developer
+103     Karan           Accountant
+...
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans2">Answer 2</h4><br>
+      <pre>
+#include&lt;stdio.h&gt;
+struct employee
+{
+    int id;
+    char name[50];
+    char designation[50];
+};
+void main()
+{
+    struct employee e[50];
+    int i;
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("\nEnter details of employee %d\n", i+1);
+
+        printf("Enter ID: ");
+        scanf("%d", &e[i].id);
+
+        getchar();
+
+        printf("Enter Name: ");
+        gets(e[i].name);
+
+        printf("Enter Designation: ");
+        gets(e[i].designation);
+    }
+
+    printf("\nNames of Employees:\n");
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("%s\n", e[i].name);
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter details of employee 1
+Enter ID: 101
+Enter Name: Rahul Sharma
+Enter Designation: Manager
+
+Enter details of employee 2
+Enter ID: 102
+Enter Name: Aman Kumar
+Enter Designation: Developer
+
+Enter details of employee 3
+Enter ID: 103
+Enter Name: Karan Singh
+Enter Designation: Accountant
+
+...
+
+Names of Employees:
+Rahul Sharma
+Aman Kumar
+Karan Singh
+...
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans3">Answer 3</h4><br>
+      <pre>
+#include&lt;stdio.h&gt;
+
+struct employee
+{
+    int id;
+    char name[50];
+    char designation[50];
+};
+
+void main()
+{
+    struct employee e[50];
+    int i;
+
+    for(i=0; i&lt;50; i++)
+    {
+        printf("\nEnter details of employee %d\n", i+1);
+
+        printf("Enter ID: ");
+        scanf("%d", &e[i].id);
+
+        getchar();
+
+        printf("Enter Name: ");
+        gets(e[i].name);
+
+        printf("Enter Designation: ");
+        gets(e[i].designation);
+    }
+
+    printf("\nID\tName\n");
+
+    for(i=0; i&gt;50; i++)
+    {
+        printf("%d\t%s\n", e[i].id, e[i].name);
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter details of employee 1
+Enter ID: 101
+Enter Name: Rahul Sharma
+Enter Designation: Manager
+
+Enter details of employee 2
+Enter ID: 102
+Enter Name: Aman Kumar
+Enter Designation: Developer
+
+Enter details of employee 3
+Enter ID: 103
+Enter Name: Karan Singh
+Enter Designation: Accountant
+
+...
+
+ID      Name
+101     Rahul Sharma
+102     Aman Kumar
+103     Karan Singh
+...
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans4">Answer 4</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+
+struct student
+{
+    int roll;
+    char name[50];
+    float fee;
+    char dob[20];
+};
+
+void main()
+{
+    struct student s[50], temp;
+    int i, j, n;
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    for(i=0; i&lt;n; i++)
+    {
+        printf("\nEnter details of student %d\n", i+1);
+
+        printf("Enter roll no: ");
+        scanf("%d", &s[i].roll);
+
+        getchar();
+
+        printf("Enter name: ");
+        gets(s[i].name);
+
+        printf("Enter fee: ");
+        scanf("%f", &s[i].fee);
+
+        getchar();
+
+        printf("Enter DOB: ");
+        gets(s[i].dob);
+    }
+
+    for(i=0; i &lt; n-1; i++)
+    {
+        for(j=0; j&lt;n-i-1; j++)
+        {
+            if(s[j].roll > s[j+1].roll)
+            {
+                temp = s[j];
+                s[j] = s[j+1];
+                s[j+1] = temp;
+            }
+        }
+    }
+
+    printf("\nRoll\tName\tFee\tDOB\n");
+
+    for(i=0; i&lt;n; i++)
+    {
+        printf("%d\t%s\t%.2f\t%s\n",
+        s[i].roll, s[i].name, s[i].fee, s[i].dob);
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter number of students: 3
+
+Enter details of student 1
+Enter roll no: 103
+Enter name: Rahul
+Enter fee: 25000
+Enter DOB: 15/05/2008
+
+Enter details of student 2
+Enter roll no: 101
+Enter name: Aman
+Enter fee: 22000
+Enter DOB: 20/08/2007
+
+Enter details of student 3
+Enter roll no: 102
+Enter name: Karan
+Enter fee: 24000
+Enter DOB: 10/02/2008
+
+Roll    Name    Fee       DOB
+101     Aman    22000.00  20/08/2007
+102     Karan   24000.00  10/02/2008
+103     Rahul   25000.00  15/05/2008
+      </pre>
+    </div>
+  </body>
+</html>

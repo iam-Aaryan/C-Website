@@ -1,0 +1,308 @@
+<html>
+  <head>
+    <title>Solutions</title>
+    <link rel="stylesheet" href="../Assets/Solution.css">
+  </head>
+  <body>
+    
+    <div id="top">
+      <img src="../Assets/img.png" height="100px">
+      <h2>Problem Solving Through C</h2>
+      <p>BCA 1st Semester Assignment</p>
+    </div>
+    
+    <h1 id="title">Solutions</h1>
+    <div id="topic">
+      <h2>2D Array</h2>
+    </div>
+    
+    <div class="bottom">
+      <h4 id="ans1">Answer 1</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    int arr[2][2], i, j;
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("Enter element [%d][%d]: ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    printf("\nMatrix is:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d\t", arr[i][j]);
+        }
+        printf("\n");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter element [0][0]: 10
+Enter element [0][1]: 20
+Enter element [1][0]: 30
+Enter element [1][1]: 40
+
+Matrix is:
+10      20
+30      40
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans2">Answer 2</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    int arr[2][2], i, j;
+    printf("Enter matrix elements:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("Enter element [%d][%d]: ", i, j);
+            scanf("%d", &arr[i][j]);
+        }
+    }
+    printf("\nOriginal Matrix:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d\t", arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nTranspose Matrix:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d\t", arr[j][i]);
+        }
+        printf("\n");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter matrix elements:
+Enter element [0][0]: 10
+Enter element [0][1]: 20
+Enter element [1][0]: 30
+Enter element [1][1]: 40
+
+Original Matrix:
+10      20
+30      40
+
+Transpose Matrix:
+10      30
+20      40
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans3">Answer 3</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+#include &lt;conio.h&gt;
+void main()
+{
+    int a[2][2], b[2][2], sum[2][2], i, j;
+    printf("Enter first matrix:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("Enter element [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    printf("\nEnter second matrix:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("Enter element [%d][%d]: ", i, j);
+            scanf("%d", &b[i][j]);
+        }
+    }
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+      }
+    printf("\nAddition of two matrices:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d\t", sum[i][j]);
+        }
+        printf("\n");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter first matrix:
+Enter element [0][0]: 1
+Enter element [0][1]: 2
+Enter element [1][0]: 3
+Enter element [1][1]: 4
+
+Enter second matrix:
+Enter element [0][0]: 5
+Enter element [0][1]: 6
+Enter element [1][0]: 7
+Enter element [1][1]: 8
+
+Addition of two matrices:
+6       8
+10      12
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans4">Answer 4</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    int a[2][2], b[2][2], sub[2][2], i, j;
+    printf("Enter first matrix:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("Enter element [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    printf("\nEnter second matrix:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("Enter element [%d][%d]: ", i, j);
+            scanf("%d", &b[i][j]);
+        }
+    }
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            sub[i][j] = a[i][j] - b[i][j];
+        }
+    }
+    printf("\nSubtraction of two matrices:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d\t", sub[i][j]);
+        }
+        printf("\n");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter first matrix:
+Enter element [0][0]: 10
+Enter element [0][1]: 20
+Enter element [1][0]: 30
+Enter element [1][1]: 40
+
+Enter second matrix:
+Enter element [0][0]: 1
+Enter element [0][1]: 2
+Enter element [1][0]: 3
+Enter element [1][1]: 4
+
+Subtraction of two matrices:
+9       18
+27      36
+      </pre>
+    </div>
+
+    <div class="bottom">
+      <h4 id="ans5">Answer 5</h4><br>
+      <pre>
+#include &lt;stdio.h&gt;
+void main()
+{
+    int a[2][2], b[2][2], mul[2][2], i, j, k;
+    printf("Enter first matrix:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("Enter element [%d][%d]: ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    printf("\nEnter second matrix:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("Enter element [%d][%d]: ", i, j);
+            scanf("%d", &b[i][j]);
+        }
+    }
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            mul[i][j] = 0;
+
+            for(k = 0; k < 2; k++)
+            {
+                mul[i][j] = mul[i][j] + a[i][k] * b[k][j];
+            }
+        }
+    }
+    printf("\nMultiplication of two matrices:\n");
+    for(i = 0; i < 2; i++)
+    {
+        for(j = 0; j < 2; j++)
+        {
+            printf("%d\t", mul[i][j]);
+        }
+        printf("\n");
+    }
+}
+      </pre>
+      <b>Output :</b><br><br>
+      <pre>
+Enter first matrix:
+Enter element [0][0]: 1
+Enter element [0][1]: 2
+Enter element [1][0]: 3
+Enter element [1][1]: 4
+
+Enter second matrix:
+Enter element [0][0]: 5
+Enter element [0][1]: 6
+Enter element [1][0]: 7
+Enter element [1][1]: 8
+
+Multiplication of two matrices:
+19      22
+43      50
+      </pre>
+    </div>
+
+  </body>
+</html>
