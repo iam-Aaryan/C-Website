@@ -689,11 +689,11 @@ void main()
     printf("Enter DOB year: ");
     scanf("%d",&by);
 
-    if(cy<by || (cy==by && cm<bm) || (cy==by && cm==bm && cd<bd))
+    if(cy&lt;by || (cy==by && cm&lt;bm) || (cy==by && cm==bm && cd&lt;bd))
         printf("Invalid date of birth");
     else
     {
-        if(cd<bd)
+        if(cd&lt;bd)
         {
             cm--;
             if(cm==0)
@@ -717,7 +717,7 @@ void main()
             cd=cd+days;
         }
 
-        if(cm<bm)
+        if(cm&lt;bm)
         {
             cm=cm+12;
             cy--;
